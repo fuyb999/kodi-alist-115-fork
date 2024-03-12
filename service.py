@@ -17,7 +17,7 @@ from resources.lib import api_simkl
 from resources.lib import events
 
 if __name__ == "__main__":
-    system_lock("SimklTrackerRun", 5)
+    system_lock("Alist115ForkRun", 5)
     log("dir = " + str(xbmcvfs.translatePath("special://home")))
     log("Python Version = " + str(sys.version))
     log("args = " + str(sys.argv))

@@ -7,11 +7,11 @@ import sys
 import xbmc, xbmcaddon, xbmcgui
 from threading import Timer
 
-__addon__ = xbmcaddon.Addon("script.simkl")
+__addon__ = xbmcaddon.Addon("plugin.video.115fork")
 
 
 def log(s):
-    xbmc.log("-- Simkl: {0}".format(s), level=xbmc.LOGDEBUG)
+    xbmc.log("-- 115fork: {0}".format(s), level=xbmc.LOGDEBUG)
 
 
 def get_str(strid):

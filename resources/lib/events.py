@@ -12,7 +12,7 @@ class Monitor(xbmc.Monitor):
 
     def onNotification(self, sender, method, data):
         log('onNotification')
-        log('sender {0}'.format(bool(sender == 'script.simkl')))
+        log('sender {0}'.format(bool(sender == 'plugin.video.115fork')))
 
         if (method == 'VideoLibrary.OnUpdate'):
             params = json.loads(data)
@@ -86,7 +86,7 @@ class Monitor(xbmc.Monitor):
                     else:
                         self._api.mark_as_unwatched(mitem)
 
-        if sender == "script.simkl":
+        if sender == "plugin.video.115fork":
             if method == 'Other.login':
                 self._api.login()
 

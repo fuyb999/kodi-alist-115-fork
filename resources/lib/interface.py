@@ -21,7 +21,7 @@ ACTION_BACK = 92
 not_dialog = xbmcgui.Dialog()
 
 
-def notify(txt="", title="Simkl", icon=__icon__):
+def notify(txt="", title="Alist115Fork", icon=__icon__):
     not_dialog.notification(title, txt, icon)
 
 
