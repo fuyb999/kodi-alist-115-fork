@@ -45,7 +45,7 @@ class Alist:
                 token = rdic["data"]
                 self.headers["authorization"] = token
                 set_setting('token', token)
-                if len(token) == 0:
+                if len(token) > 0:
                     notify("Alist login successfully.")
                 else:
                     notify("Alist login fail.")
