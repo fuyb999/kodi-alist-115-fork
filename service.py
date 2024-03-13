@@ -11,9 +11,10 @@ import xbmcvfs
 
 from resources.lib.utils import log
 from resources.lib.utils import system_lock
-
+from resources.lib.interface import notify
 from resources.lib import engine
-from resources.lib import api_simkl
+# from resources.lib import api_simkl
+from resources.lib import api_alist
 from resources.lib import events
 
 if __name__ == "__main__":
@@ -22,7 +23,10 @@ if __name__ == "__main__":
     log("Python Version = " + str(sys.version))
     log("args = " + str(sys.argv))
 
-    api = api_simkl.Simkl()
+    notify("welcome")
+
+    # api = api_simkl.Simkl()
+    api = api_alist.Alist()
     monitor = events.Monitor(api=api)
     player = engine.Player(api=api)
 

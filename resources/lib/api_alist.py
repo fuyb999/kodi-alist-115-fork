@@ -31,7 +31,8 @@ class Alist:
         self.login()
 
     def login(self):
-        if self.loginInProgress: return
+        if self.loginInProgress:
+            return
         self.loginInProgress = True
 
         if not self.isLoggedIn:
@@ -74,6 +75,7 @@ class Alist:
                 notify(get_str(32031))
                 return False
             return data if is_json else r
-        except Exception:
+        except Exception as e:
+            notify("http err: " + str(e))
             return None
 
