@@ -22,11 +22,10 @@ class Alist:
         self.loginInProgress = False
 
         self.headers = {"Content-Type": "application/x-www-form-urlencoded"}
-        # set_setting('token', '')
-        token = get_setting('token')
-        if token:
-            self.headers["authorization"] = token
-            return
+        # token = get_setting('token')
+        # if token:
+        #     self.headers["authorization"] = token
+        #     return
         self.login()
 
     def login(self):
