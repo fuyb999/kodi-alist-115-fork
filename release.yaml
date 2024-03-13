@@ -1,4 +1,4 @@
-version: '0.0.6'
+version: '0.0.8'
 changelog: |-
   :tada: New features and improvements
   ------------------------------------
@@ -29,8 +29,8 @@ changelog: |-
   + Bump release-drafter/release-drafter from 5.22.0 to 5.23.0 (#274) @dependabot
 dependencies:
   py2:
-#    - addon: 'xbmc.python'
-#      version: '2.25.0'
+    - addon: 'xbmc.python'
+      version: '2.25.0'
 #    - addon: 'script.module.requests'
 #      version: '2.22.0'
 #    - addon: 'script.module.dateutil'

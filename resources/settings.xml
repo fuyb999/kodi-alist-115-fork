@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
   <category label="LogIn">
-    <setting label="Address" type="text" id="address" default="http://192.168.2.2:5243" visible="true"/>
+    <setting label="Address" type="text" id="address" default="192.168.2.2" visible="true"/>
     <setting label="Username" type="text" id="username" default="admin" visible="true"/>
     <setting label="Password" type="text" id="password" default="" visible="true"/>
     <setting label="token" id="token" type="text" default="" visible="false" />

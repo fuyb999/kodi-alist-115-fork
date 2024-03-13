@@ -26,7 +26,6 @@ class Alist:
         token = get_setting('token')
         if token:
             self.headers["authorization"] = token
-            notify(get_str(32025).format(self.userSettings["user"]["name"]))
             return
         self.login()
 
@@ -43,11 +42,14 @@ class Alist:
             rdic = self._http("/auth", headers=self.headers, body=data)
 
             if isinstance(rdic, dict) and rdic["code"] == 200:
-                self.headers["authorization"] = rdic["data"]
-                set_setting('token', rdic["access_token"])
-                notify(get_str(32030).format(self.userSettings["user"]["name"]))
+                token = rdic["data"]
+                self.headers["authorization"] = token
+                set_setting('token', token)
+                if len(token) == 0:
+                    notify("Alist login successfully.")
+                else:
+                    notify("Alist login fail.")
         else:
-            notify(get_str(32025).format(self.userSettings["user"]["name"]))
             self.loginInProgress = False
 
     def play(self, url):
@@ -60,11 +62,11 @@ class Alist:
         else:
             notify(rdic["message"])
 
-    def _http(self, url, headers={}, body=None, is_json=True, method='POST'):
+    def _http(self, url, headers={}, body={}, is_json=True, method='POST'):
         try:
-            con = http.client.HTTPConnection(get_setting("address"))
+            con = http.client.HTTPConnection(get_setting("address"), 5243)
             form_data = None
-            if not body:
+            if len(body) > 0:
                 form_data = '&'.join([f'{key}={value}' for key, value in body.items()])
             con.request(method, url, headers=headers, body=form_data)
             r = con.getresponse()
