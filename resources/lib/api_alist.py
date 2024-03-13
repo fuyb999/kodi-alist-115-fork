@@ -46,6 +46,7 @@ class Alist:
                 set_setting('token', token)
                 if len(token) > 0:
                     notify("Alist login successfully.")
+                    self.isLoggedIn = True
                 else:
                     notify("Alist login fail.")
         else:

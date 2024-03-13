@@ -23,8 +23,6 @@ if __name__ == "__main__":
     log("Python Version = " + str(sys.version))
     log("args = " + str(sys.argv))
 
-    notify("welcome")
-
     # api = api_simkl.Simkl()
     api = api_alist.Alist()
     monitor = events.Monitor(api=api)
